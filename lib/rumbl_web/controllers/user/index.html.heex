@@ -1,6 +1,6 @@
 <.header>Users</.header>
 
 <.table id="users" rows={@users}>
-  <:col :let={user}><b>{first_name(user)}</b> ({user.id})</:col>
+  <:col :let={user}><.user user={user} /></:col>
   <:col :let={user}><.link navigate={~p"/users/#{user.id}"}>View</.link></:col>
 </.table>

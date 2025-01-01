@@ -21,6 +21,14 @@
       >
         Get Started <span aria-hidden="true">&rarr;</span>
       </a>
+
+      <%= if @current_user do %>
+        <.link href={~p"/users/#{@current_user.id}"}>{@current_user.username}</.link>
+        <.link href={~p"/sessions/delete"} method="delete">Log out</.link>
+      <% else %>
+        <.link href={~p"/users/new"}>Register</.link>
+        <.link href={~p"/sessions/new"}>Log in</.link>
+      <% end %>
     </div>
   </div>
 </header>

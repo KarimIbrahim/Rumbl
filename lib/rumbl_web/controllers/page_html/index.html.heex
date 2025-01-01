@@ -1,4 +1,12 @@
-<section>
-  <h1>{gettext("Weclome to %{name}!", name: "Rumbl.io")}</h1>
-  <p>Rumbl out loud.</p>
-</section>
+<.header class="mx-auto max-w-2xl py32 sm:py-48 lg:py-56">
+  <div class="text-center">
+    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+      {gettext("Weclome to %{name}!", name: "Rumbl.io")}
+    </h1>
+    <%= if @current_user do %>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Rumbl out loud, {@current_user.username}.</p>
+    <% else %>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Rumbl out loud.</p>
+    <% end %>
+  </div>
+</.header>

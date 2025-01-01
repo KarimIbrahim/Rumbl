@@ -1,6 +1,8 @@
 defmodule RumblWeb.Router do
   use RumblWeb, :router
 
+  # alias RumblWeb.UserController
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +10,7 @@ defmodule RumblWeb.Router do
     plug :put_root_layout, html: {RumblWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug RumblWeb.Auth
   end
 
   pipeline :api do
@@ -17,9 +20,9 @@ defmodule RumblWeb.Router do
   scope "/", RumblWeb do
     pipe_through :browser
 
-    get "/users", UserController, :index
-    get "/user/:id", UserController, :show
     get "/", PageController, :index
+    resources "/users", UserController, only: [:index, :show, :new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.
