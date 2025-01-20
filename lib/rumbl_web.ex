@@ -27,6 +27,7 @@ defmodule RumblWeb do
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
+      import RumblWeb.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -45,6 +46,7 @@ defmodule RumblWeb do
       use Gettext, backend: RumblWeb.Gettext
 
       import Plug.Conn
+      import RumblWeb.Auth, only: [authenticate_user: 2]
 
       unquote(verified_routes())
     end

@@ -1,4 +1,4 @@
-// See the Tailwind configuration guide for advanced usage
+/proto_1_ios_new.arm64/ See the Tailwind configuration guide for advanced usage
 // https://tailwindcss.com/docs/configuration
 
 const plugin = require("tailwindcss/plugin")

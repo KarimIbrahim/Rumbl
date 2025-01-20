@@ -13,9 +13,4 @@ defmodule RumblWeb.UserHTML do
     |> Enum.at(0)
   end
 
-  def user(assigns) do
-    ~H"""
-    <b>{first_name(@user)}</b> ({@user.id})
-    """
-  end
 end

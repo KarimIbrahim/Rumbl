@@ -1,5 +1,7 @@
 # Rumbl
 
+(Following the Programming Phoenix book)
+
 Provides timestamped comments for a video stream. Built with Elixir and Phoenix.
 
 

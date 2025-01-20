@@ -9,21 +9,9 @@
       </p>
     </div>
     <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
-      >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
-
       <%= if @current_user do %>
         <.link href={~p"/users/#{@current_user.id}"}>{@current_user.username}</.link>
+        <.link href={~p"/manage/videos"}>My Videos</.link>
         <.link href={~p"/sessions/delete"} method="delete">Log out</.link>
       <% else %>
         <.link href={~p"/users/new"}>Register</.link>
